@@ -3,37 +3,37 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define x 9
+#define X 9
 #define MAX 9
 
-void createMatrices(int matrix1[x][x], int matrix2[x][x], int resultMatrix[x][x]);
-void multiplyMatrices(int matrix1[x][x], int matrix2[x][x], int resultMatrix[x][x]);
-void printMatrix(int matrix[x][x]);
+void createMatrices(int matrix1[X][X], int matrix2[X][X], int resultMatrix[X][X]);
+void multiplyMatrices(int matrix1[][X], int matrix2[X][X], int resultMatrix[X][X]);
+void printMatrix(int matrix[X][X]);
 
 int main() {
-    int matrix1[x][x], matrix2[x][x], resultMatrix[x][x];
+    int matrix1[X][X], matrix2[X][X], resultMatrix[X][X];
     
-    createMatrices(matrix1[x][x], matrix2[x][x], resultMatrix[x][x]);
+    createMatrices(matrix1[X][X], matrix2[X][X], resultMatrix[X][X]);
     
-    printMatrix(matrix1[x][x]);
-    printMatrix(matrix2[x][x]);
-    printMatrix(resultMatrix[x][x]);
+    printMatrix(matrix1[X][X]);
+    printMatrix(matrix2[X][X]);
+    printMatrix(resultMatrix[X][X]);
     
-    multiplyMatrices(matrix1[x][x], matrix2[x][x], resultMatrix[x][x]);
+    multiplyMatrices(matrix1[X][X], matrix2[X][X], resultMatrix[X][X]);
     
-    printMatrix(matrix1[x][x]);
-    printMatrix(matrix2[x][x]);
-    printMatrix(resultMatrix[x][x]);
+    printMatrix(matrix1[X][X]);
+    printMatrix(matrix2[X][X]);
+    printMatrix(resultMatrix[X][X]);
 
 }
 
-void createMatrices(int matrix1[x][x], int matrix2[x][x], int resultMatrix[x][x]) {
+void createMatrices(int matrix1[X][X], int matrix2[X][X], int resultMatrix[X][X]) {
 
     srand(time(NULL));//Initialisierung des RandomGenerators
 
-    for (int i = 0; i < x; i++) {
+    for (int i = 0; i < X; i++) {
         
-        for (int j = 0; j < x; j++) {
+        for (int j = 0; j < X; j++) {
             
             matrix1[i][j] = rand() % MAX+1;//Random aus modulo 10
             matrix2[i][j] = rand() % MAX+1;
@@ -43,13 +43,13 @@ void createMatrices(int matrix1[x][x], int matrix2[x][x], int resultMatrix[x][x]
     }
 }
 
-void multiplyMatrices(int matrix1[x][x], int matrix2[x][x], int resultMatrix[x][x]){
+void multiplyMatrices(int matrix1[X][X], int matrix2[X][X], int resultMatrix[X][X]){
 
-     for (int i = 0; i < x; i++) {
+     for (int i = 0; i < X; i++) {
         
-        for (int j = 0; j < x; j++) {
+        for (int j = 0; j < X; j++) {
             
-           for (int k = 0; k < x; k++) { 
+           for (int k = 0; k < X; k++) { 
 
             resultMatrix[i][j] += matrix1[i][k] * matrix2[k][j]; //Formel für die MatrixMultiplikation
 
@@ -59,13 +59,13 @@ void multiplyMatrices(int matrix1[x][x], int matrix2[x][x], int resultMatrix[x][
     }
 }
 
-void printMatrix(int matrix[x][x]) {
+void printMatrix(int matrix[X][X]) {
 
-    for (int i = 0; i < x; i++) {
+    for (int i = 0; i < X; i++) {
         
-        for (int j = 0; j < x; j++) {
+        for (int j = 0; j < X; j++) {
             
-            if (j < x-1) {
+            if (j < X-1) {
                 printf("%i", matrix[i][j]);
             }
             else {

@@ -7,7 +7,7 @@
 #define MAX 9
 
 void createMatrices(int mat1[X][X], int mat2[X][X], int resultMat[X][X]);
-void multiplyMatrices(int mat1[][X], int mat2[X][X], int resultMat[X][X]);
+void multiplyMatrices(int mat1[X][X], int mat2[X][X], int resultMat[X][X]);
 void printMatrix(int mat[X][X]);
 
 int main() {

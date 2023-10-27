@@ -13,17 +13,17 @@ void printMatrix(int mat[X][X]);
 int main() {
     int matrix1[X][X], matrix2[X][X], resultMatrix[X][X];
     
-    createMatrices(matrix1[X][X], matrix2[X][X], resultMatrix[X][X]);
+    createMatrices(matrix1, matrix2, resultMatrix);
     
-    printMatrix(matrix1[X][X]);
-    printMatrix(matrix2[X][X]);
-    printMatrix(resultMatrix[X][X]);
+    printMatrix(matrix1);
+    printMatrix(matrix2);
+    printMatrix(resultMatrix);
     
-    multiplyMatrices(matrix1[X][X], matrix2[X][X], resultMatrix[X][X]);
+    multiplyMatrices(matrix1, matrix2, resultMatrix);
     
-    printMatrix(matrix1[X][X]);
-    printMatrix(matrix2[X][X]);
-    printMatrix(resultMatrix[X][X]);
+    printMatrix(matrix1);
+    printMatrix(matrix2);
+    printMatrix(resultMatrix);
 
 }
 
@@ -35,8 +35,8 @@ void createMatrices(int mat1[X][X], int mat2[X][X], int resultMat[X][X]) {
         
         for (int j = 0; j < X; j++) {
             
-            mat1[i][j] = rand() % MAX+1;//Random aus modulo 10
-            mat2[i][j] = rand() % MAX+1;
+            mat1[i][j] = rand() % (MAX+1);//Random aus modulo 10
+            mat2[i][j] = rand() % (MAX+1);
             resultMat[i][j] = 0; //Initialisierung als NullMatrix
         
         }
@@ -66,13 +66,18 @@ void printMatrix(int matrix[X][X]) {
         for (int j = 0; j < X; j++) {
             
             if (j < X-1) {
-                printf("%i", matrix[i][j]);
+                printf(" %i", matrix[i][j]);
             }
             else {
-                printf("%i\n", matrix[i][j]); //Zeilenumbruch nach letzter Spalte
+                printf(" %i\n\n", matrix[i][j]); //Zeilenumbruch nach letzter Spalte
             }
         
         }
     }
+
+    for (int i = 0; i < (2*X); i++) {
+        printf("-");
+    }
+    printf("\n\n");
 
 }

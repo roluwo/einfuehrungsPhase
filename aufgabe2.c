@@ -6,9 +6,9 @@
 #define X 9
 #define MAX 9
 
-void createMatrices(int matrix1[X][X], int matrix2[X][X], int resultMatrix[X][X]);
-void multiplyMatrices(int matrix1[][X], int matrix2[X][X], int resultMatrix[X][X]);
-void printMatrix(int matrix[X][X]);
+void createMatrices(int mat1[X][X], int mat2[X][X], int resultMat[X][X]);
+void multiplyMatrices(int mat1[][X], int mat2[X][X], int resultMat[X][X]);
+void printMatrix(int mat[X][X]);
 
 int main() {
     int matrix1[X][X], matrix2[X][X], resultMatrix[X][X];
@@ -27,7 +27,7 @@ int main() {
 
 }
 
-void createMatrices(int matrix1[X][X], int matrix2[X][X], int resultMatrix[X][X]) {
+void createMatrices(int mat1[X][X], int mat2[X][X], int resultMat[X][X]) {
 
     srand(time(NULL));//Initialisierung des RandomGenerators
 
@@ -35,15 +35,15 @@ void createMatrices(int matrix1[X][X], int matrix2[X][X], int resultMatrix[X][X]
         
         for (int j = 0; j < X; j++) {
             
-            matrix1[i][j] = rand() % MAX+1;//Random aus modulo 10
-            matrix2[i][j] = rand() % MAX+1;
-            resultMatrix[i][j] = 0; //Initialisierung als NullMatrix
+            mat1[i][j] = rand() % MAX+1;//Random aus modulo 10
+            mat2[i][j] = rand() % MAX+1;
+            resultMat[i][j] = 0; //Initialisierung als NullMatrix
         
         }
     }
 }
 
-void multiplyMatrices(int matrix1[X][X], int matrix2[X][X], int resultMatrix[X][X]){
+void multiplyMatrices(int mat1[X][X], int mat2[X][X], int resultMat[X][X]){
 
      for (int i = 0; i < X; i++) {
         
@@ -51,7 +51,7 @@ void multiplyMatrices(int matrix1[X][X], int matrix2[X][X], int resultMatrix[X][
             
            for (int k = 0; k < X; k++) { 
 
-            resultMatrix[i][j] += matrix1[i][k] * matrix2[k][j]; //Formel für die MatrixMultiplikation
+            resultMat[i][j] += mat1[i][k] * mat2[k][j]; //Formel für die MatrixMultiplikation
 
            }
         

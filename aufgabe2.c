@@ -4,8 +4,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-int x = 9;
-int MAX = 9;
+#define x 9
+#define MAX 9
 
 void createMatrices(int matrix1[x][x], int matrix2[x][x], int resultMatrix[x][x]);
 void multiplyMatrices(int matrix1[x][x], int matrix2[x][x], int resultMatrix[x][x]);

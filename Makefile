@@ -1,23 +1,26 @@
-# Makefile für das Projekt "aufgabe3"
+# Makefile für ein C-Projekt mit mehreren Quelldateien und separaten ausführbaren Dateien
 
 # Compiler und Compiler-Optionen
-CC = gcc  # Verwende gcc als C Compiler
-CFLAGS = -Wall -std=c99  # Compiler-Optionen, -Wall aktiviert alle Warnungen
+CC = gcc
+CFLAGS = -Wall -std=c99
 
-# Dateinamen
-SRC = aufgabe3.c  # Liste der Quelldateien
-TARGET = aufgabe3  # Name der ausführbaren Datei
+# Liste der Quelldateien
+SOURCES = aufgabe2.c aufgabe3.c aufgabe4.c
 
-# Standardziel: Erstelle das ausführbare Programm
-all: $(TARGET)
+# Erstelle separate ausführbare Dateien für jede Quelldatei
+EXECUTABLES = $(SOURCES:.c=)
 
-# Regel zur Erstellung der ausführbaren Datei
-$(TARGET): $(SRC)
-	$(CC) $(CFLAGS) -o $(TARGET) $(SRC)
+# Standardziel: Erstelle alle ausführbaren Dateien
+all: $(EXECUTABLES)
 
-# Lösche erstellte Dateien
+# Regel zur Erstellung der ausführbaren Dateien
+%: %.c
+	$(CC) $(CFLAGS) $< -o $@
+
+# Lösche erstellte ausführbare Dateien
 clean:
-	rm -f $(TARGET)
+	rm -f $(EXECUTABLES)
 
 # Phony-Ziele
 .PHONY: all clean
+

@@ -22,6 +22,8 @@ int main() {
     
     free(arr);
 
+    return 0;
+
 }
 
 void getFileName() {
@@ -61,6 +63,7 @@ void fillArray() {
 
     }
 
+    fclose(file);
 
 }
 

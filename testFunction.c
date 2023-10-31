@@ -20,7 +20,7 @@ void getSize() {
 
     printf("Do you want to use the standard size? (y/n)\n");
     fflush(stdin);
-    scanf("%c", &answer);
+    scanf(" %c", &answer);
     printf("%c\n", answer);
     
     if (answer == 'y') {
@@ -33,11 +33,11 @@ void getSize() {
         
         printf("Enter Height:\n");
         fflush(stdin);
-        scanf("%d", &height);
+        scanf(" %d", &height);
 
         printf("Enter Width:\n");
         fflush(stdin);
-        scanf("%d", &width);
+        scanf(" %d", &width);
 
     }
     else {

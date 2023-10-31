@@ -1,0 +1,10 @@
+Roman 6
+Michi 7
+Roman 7
+SoSchlech 8
+A 100
+A 100
+A 100
+A 100
+A 100
+A 100
